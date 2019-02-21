@@ -2,20 +2,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>fr.nadeva</groupId>
-    <artifactId>javaee-class</artifactId>
+    <groupId>fr.nadeva.javaee-class</groupId>
+    <artifactId>parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>JavaEE 8 (JSR 366)</name>
     <description>Test classes for Java EE training</description>
     <packaging>pom</packaging>
     <modules>
-        <module>cdi</module>
-        <module>beanvalidation</module>
-        <module>jpa</module>
-        <module>ejb</module>
-        <module>jax-rs</module>
+        <module>init</module>
+        <module>complete</module>
     </modules>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -76,7 +73,25 @@
 
             </plugins>
         </pluginManagement>
-
     </build>
-
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://jcenter.bintray.com/</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://jcenter.bintray.com/</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

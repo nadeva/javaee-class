@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="examplePersistenceUnit" transaction-type="RESOURCE_LOCAL">
+        <!--<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
+
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <class>fr.nadeva.Book</class>
+        <!--<mapping-file>META-INF/book.xml</mapping-file>-->
+        <properties>
+            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
+            <property name="javax.persistence.schema-generation.scripts.create-target" value="target/create.ddl"/>
+            <property name="javax.persistence.schema-generation.scripts.drop-target" value="target/drop.ddl"/>
+            <property name="javax.persistence.logging.level" value="INFO"/>
+
+            <!--Comment to use local derby-->
+
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test"/>
+
+            <!--Uncomment to use local derby-->
+
+            <!--<property name="javax.persistence.jdbc.user" value="APP"/>-->
+            <!--<property name="javax.persistence.jdbc.password" value="APP"/>-->
+            <!--<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>-->
+            <!--<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/testjpa;create=true"/>-->
+        <!---->
+        </properties>
+    </persistence-unit>
+
+</persistence>
